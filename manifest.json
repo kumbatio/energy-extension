@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Kumbatio Energy — Adaptive Web",
+  "version": "0.1.0",
+  "description": "Set your cognitive energy once. Share it opt-in with energy-aware web apps, or turn on gentle calm mode for noisy sites.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Set your cognitive energy"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["calm.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

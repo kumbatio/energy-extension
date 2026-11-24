@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kumbatio Energy</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>How much energy do you have right now?</h1>
+        <p class="subtitle">Stored locally on this device. Never tracked.</p>
+      </header>
+
+      <fieldset id="dial">
+        <legend class="sr-only">Cognitive energy level</legend>
+      </fieldset>
+
+      <section class="site-controls" id="site-controls" hidden>
+        <p class="site-host" id="site-host"></p>
+        <label class="toggle">
+          <input type="checkbox" id="toggle-share" />
+          <span>Share energy level with this site</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="toggle-calm" />
+          <span>Gentle calm mode on this site (at Low &amp; Rest)</span>
+        </label>
+      </section>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

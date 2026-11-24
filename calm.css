@@ -1,0 +1,31 @@
+/*
+ * Gentle Web Calm — optional, user-enabled softening for legacy sites that do
+ * not natively implement `@kumbatio/energy-system`.
+ *
+ * Non-destructive: reduces harsh motion and visual noise at Low (25) and
+ * Rest (0) while keeping every control reachable on hover or keyboard focus.
+ */
+
+html[data-kumbatio-calm='25'] *,
+html[data-kumbatio-calm='0'] * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+}
+
+html[data-kumbatio-calm='25'] aside,
+html[data-kumbatio-calm='0'] aside {
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+
+html[data-kumbatio-calm='25'] aside:hover,
+html[data-kumbatio-calm='25'] aside:focus-within,
+html[data-kumbatio-calm='0'] aside:hover,
+html[data-kumbatio-calm='0'] aside:focus-within {
+  opacity: 1;
+}
+
+html[data-kumbatio-calm='0'] {
+  filter: saturate(0.75);
+}
